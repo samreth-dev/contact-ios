@@ -152,20 +152,20 @@
 				532CE53D293D8FE3003E4ABC /* Models */,
 				532CE53E293D8FF3003E4ABC /* ReusableViews */,
 				532CE542293D9011003E4ABC /* Storyboards */,
-				532CE53B293D8FD2003E4ABC /* DataController */,
+				532CE53B293D8FD2003E4ABC /* DB */,
 				532CE541293D9001003E4ABC /* Resources */,
 				532CE540293D8FFE003E4ABC /* Apps */,
 			);
 			path = ContactApp;
 			sourceTree = "<group>";
 		};
-		532CE53B293D8FD2003E4ABC /* DataController */ = {
+		532CE53B293D8FD2003E4ABC /* DB */ = {
 			isa = PBXGroup;
 			children = (
 				532CE543293D9024003E4ABC /* DB.swift */,
 				532CE52D293D8FAA003E4ABC /* ContactApp.xcdatamodeld */,
 			);
-			path = DataController;
+			path = DB;
 			sourceTree = "<group>";
 		};
 		532CE53D293D8FE3003E4ABC /* Models */ = {

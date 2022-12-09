@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddViewController" customModule="ContactApp" customModuleProvider="target">
+            <connections>
+                <outlet property="addButton" destination="4Ex-uI-6Cy" id="Uw1-Sn-qoN"/>
+                <outlet property="fullnameTf" destination="bzT-l1-i5O" id="2i3-dN-Ui4"/>
+                <outlet property="groupButton" destination="qce-bt-lqu" id="PJc-0L-8Cz"/>
+                <outlet property="mobileTf" destination="ArB-cY-5DN" id="1WK-aV-gsn"/>
+                <outlet property="nicknameTf" destination="0eu-p3-a7U" id="gwl-ra-01P"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bzT-l1-i5O" customClass="CTextfield" customModule="ContactApp" customModuleProvider="target">
+                    <rect key="frame" x="16" y="321" width="361" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="XP1-ER-Uo1"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ArB-cY-5DN" customClass="CTextfield" customModule="ContactApp" customModuleProvider="target">
+                    <rect key="frame" x="16" y="401" width="361" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="eu7-Di-PKs"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0eu-p3-a7U" customClass="CTextfield" customModule="ContactApp" customModuleProvider="target">
+                    <rect key="frame" x="16" y="481" width="361" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="Hax-dy-4Dj"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qce-bt-lqu">
+                    <rect key="frame" x="16" y="561" width="361" height="34.333333333333371"/>
+                    <menu key="menu" title="Group" id="yGM-Tf-ctp">
+                        <children>
+                            <command title="Honey" id="JH6-bx-9wz"/>
+                        </children>
+                    </menu>
+                    <state key="normal" title="Group"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Group"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ex-uI-6Cy">
+                    <rect key="frame" x="140" y="635.33333333333337" width="113" height="35"/>
+                    <color key="backgroundColor" systemColor="systemMintColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="nJD-n9-Owh"/>
+                    </constraints>
+                    <color key="tintColor" systemColor="systemMintColor"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="ADD"/>
+                    <connections>
+                        <action selector="addClick:" destination="-1" eventType="touchUpInside" id="oB6-Oo-esY"/>
+                    </connections>
+                </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.rectangle.stack.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Iwr-05-kUb">
+                    <rect key="frame" x="140" y="181" width="113" height="100"/>
+                    <color key="tintColor" systemColor="systemMintColor"/>
+                </imageView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="0eu-p3-a7U" firstAttribute="top" secondItem="ArB-cY-5DN" secondAttribute="bottom" constant="30" id="0Iq-QT-hdX"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Iwr-05-kUb" secondAttribute="trailing" constant="140" id="5dY-Sc-Rzm"/>
+                <constraint firstItem="Iwr-05-kUb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="140" id="5lR-Nc-f8l"/>
+                <constraint firstItem="4Ex-uI-6Cy" firstAttribute="top" secondItem="qce-bt-lqu" secondAttribute="bottom" constant="40" id="8ck-kz-9OT"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0eu-p3-a7U" secondAttribute="trailing" constant="16" id="EZb-ZK-Dao"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ArB-cY-5DN" secondAttribute="trailing" constant="16" id="HhR-xL-C1L"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bzT-l1-i5O" secondAttribute="trailing" constant="16" id="KGr-za-Ov9"/>
+                <constraint firstItem="ArB-cY-5DN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="LFJ-wh-sZj"/>
+                <constraint firstItem="0eu-p3-a7U" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Qfk-py-YS3"/>
+                <constraint firstItem="bzT-l1-i5O" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="T3h-qN-M9S"/>
+                <constraint firstItem="4Ex-uI-6Cy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="140" id="c9s-F0-8o5"/>
+                <constraint firstItem="ArB-cY-5DN" firstAttribute="top" secondItem="bzT-l1-i5O" secondAttribute="bottom" constant="30" id="fun-XW-ucm"/>
+                <constraint firstItem="qce-bt-lqu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="g5W-ey-J6s"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4Ex-uI-6Cy" secondAttribute="trailing" constant="140" id="idj-gr-caU"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qce-bt-lqu" secondAttribute="trailing" constant="16" id="mq0-qE-lLI"/>
+                <constraint firstItem="qce-bt-lqu" firstAttribute="top" secondItem="0eu-p3-a7U" secondAttribute="bottom" constant="30" id="u04-QG-1PV"/>
+                <constraint firstItem="ArB-cY-5DN" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="uEc-gy-Grz"/>
+                <constraint firstItem="bzT-l1-i5O" firstAttribute="top" secondItem="Iwr-05-kUb" secondAttribute="bottom" constant="40" id="vLa-ES-dgb"/>
+                <constraint firstItem="Iwr-05-kUb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="122" id="zrs-D2-aRB"/>
+            </constraints>
+            <point key="canvasLocation" x="130.53435114503816" y="-12.67605633802817"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="person.crop.rectangle.stack.fill" catalog="system" width="128" height="122"/>
+        <systemColor name="systemMintColor">
+            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

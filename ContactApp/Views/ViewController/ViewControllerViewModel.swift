@@ -60,8 +60,7 @@ class ViewControllerViewModel: ViewControllerViewModelProtocol {
             guard let self = self else { return }
             if self.contactsForDeleting.contains(contact) {
                 self.contactsForDeleting.remove(contact)
-            }
-            else {
+            } else {
                 self.contactsForDeleting.insert(contact)
             }
         }
