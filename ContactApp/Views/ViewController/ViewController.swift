@@ -8,13 +8,13 @@
 import UIKit
 import Combine
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+class ViewController: UIViewController {
     @IBOutlet weak var toolbar: UIToolbar!
     @IBOutlet weak var tableView: UITableView!
     private var addButton: UIButton!
     private var stackView: UIStackView!
-    private var viewModel = ViewControllerViewModel()
     private var editButton: UIBarButtonItem!
+    private var viewModel: ViewControllerViewModelProtocol = ViewControllerViewModel()
     private var cancellable: Set<AnyCancellable> = []
     
     override func viewDidLoad() {
@@ -48,7 +48,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
     }
     
     private func binding() {
-        viewModel.$reloadToggle.sink {[weak self] _ in
+        viewModel.publisher.sink {[weak self] _ in
             self?.tableView.reloadData()
         }.store(in: &cancellable)
     }

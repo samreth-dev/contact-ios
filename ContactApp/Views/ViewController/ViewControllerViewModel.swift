@@ -10,6 +10,7 @@ import CoreData
 
 protocol ViewControllerViewModelProtocol {
     var reloadToggle: Bool { get set }
+    var publisher: Published<Bool>.Publisher { get }
     var contacts: [Contact] { get set }
     var isEdit: Bool { get set }
     var clickCallBack: ((Contact) -> ())! { get set }
@@ -26,6 +27,7 @@ protocol ViewControllerViewModelProtocol {
 class ViewControllerViewModel: ViewControllerViewModelProtocol {
     @Published var reloadToggle: Bool
     private var contactsForDeleting: Set<Contact>
+    var publisher: Published<Bool>.Publisher { $reloadToggle }
     var contacts: [Contact]
     var isEdit: Bool
     var clickCallBack: ((Contact) -> ())!

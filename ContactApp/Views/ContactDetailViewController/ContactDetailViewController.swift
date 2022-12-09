@@ -76,7 +76,7 @@ private extension ContactDetailViewController {
     }
 }
 
-//MARK: datasource
+//MARK: tableview datasource
 extension ContactDetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         4
@@ -94,7 +94,7 @@ extension ContactDetailViewController: UITableViewDataSource {
     }
 }
 
-//MARK: delegate
+//MARK: uiimagepicker delegate & datasource
 extension ContactDetailViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
