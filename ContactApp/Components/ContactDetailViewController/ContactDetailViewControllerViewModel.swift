@@ -78,5 +78,4 @@ extension ContactDetailViewControllerViewModel: ContactDetailViewControllerViewM
         contact.profile = profile
         DB.shared.saveContacts()
     }
-    
 }
