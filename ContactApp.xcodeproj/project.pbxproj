@@ -97,7 +97,7 @@
 			path = ContactTableViewCell;
 			sourceTree = "<group>";
 		};
-		531AB18B29401FDA008C345D /* Views */ = {
+		531AB18B29401FDA008C345D /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				531AB19729404AEC008C345D /* ContactDetailTableViewCell */,
@@ -107,7 +107,7 @@
 				538FA75A29401E6E008A4F8B /* ContactDetailViewController */,
 				538FA75929401E5F008A4F8B /* ViewController */,
 			);
-			path = Views;
+			path = Components;
 			sourceTree = "<group>";
 		};
 		531AB19029402435008C345D /* HeaderView */ = {
@@ -148,7 +148,7 @@
 		532CE523293D8FAA003E4ABC /* ContactApp */ = {
 			isa = PBXGroup;
 			children = (
-				531AB18B29401FDA008C345D /* Views */,
+				531AB18B29401FDA008C345D /* Components */,
 				532CE53D293D8FE3003E4ABC /* Models */,
 				532CE53E293D8FF3003E4ABC /* ReusableViews */,
 				532CE542293D9011003E4ABC /* Storyboards */,
