@@ -16,7 +16,7 @@ protocol AddViewModelProtocol {
     func addContact(fullname: String?, mobile: String?, group: ContactGroup, nickname: String?) -> Bool
 }
 
-class AddViewModel: AddViewModelProtocol {
+class AddViewModel {
     var contactGroup: ContactGroup
     var contact: Contact?
     var title: String
@@ -28,7 +28,9 @@ class AddViewModel: AddViewModelProtocol {
         self.title = title
         self.addCallBack = addCallBack
     }
-    
+}
+
+extension AddViewModel: AddViewModelProtocol {
     func editContact(fullname: String?, mobile: String?, group: ContactGroup, nickname: String?) -> Bool {
         guard let contact = contact, let fullname = fullname, let mobile = Int(mobile ?? ""), let nickname = nickname else { return false }
         
