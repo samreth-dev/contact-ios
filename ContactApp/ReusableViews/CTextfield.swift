@@ -10,6 +10,7 @@ import UIKit
 class CTextfield: UIView {
     @IBOutlet var view: UIView!
     @IBOutlet weak var textField: UITextField!
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         initXibView()

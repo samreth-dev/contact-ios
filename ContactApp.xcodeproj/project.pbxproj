@@ -18,14 +18,14 @@
 		532880CD293FD695008EF20A /* ContactTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532880CC293FD695008EF20A /* ContactTableViewCellViewModel.swift */; };
 		532CE525293D8FAA003E4ABC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532CE524293D8FAA003E4ABC /* AppDelegate.swift */; };
 		532CE527293D8FAA003E4ABC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532CE526293D8FAA003E4ABC /* SceneDelegate.swift */; };
-		532CE529293D8FAA003E4ABC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532CE528293D8FAA003E4ABC /* ViewController.swift */; };
+		532CE529293D8FAA003E4ABC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532CE528293D8FAA003E4ABC /* HomeViewController.swift */; };
 		532CE52C293D8FAA003E4ABC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 532CE52A293D8FAA003E4ABC /* Main.storyboard */; };
 		532CE52F293D8FAA003E4ABC /* ContactApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 532CE52D293D8FAA003E4ABC /* ContactApp.xcdatamodeld */; };
 		532CE531293D8FAB003E4ABC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 532CE530293D8FAB003E4ABC /* Assets.xcassets */; };
 		532CE534293D8FAB003E4ABC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 532CE532293D8FAB003E4ABC /* LaunchScreen.storyboard */; };
 		532CE544293D9024003E4ABC /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532CE543293D9024003E4ABC /* DB.swift */; };
 		532CE546293D903A003E4ABC /* ContactGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532CE545293D903A003E4ABC /* ContactGroup.swift */; };
-		532CE548293D92C0003E4ABC /* ViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532CE547293D92C0003E4ABC /* ViewControllerViewModel.swift */; };
+		532CE548293D92C0003E4ABC /* HomeViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532CE547293D92C0003E4ABC /* HomeViewControllerViewModel.swift */; };
 		532CE54E293DA336003E4ABC /* AddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532CE54D293DA336003E4ABC /* AddViewModel.swift */; };
 		538FA75529401DE5008A4F8B /* ContactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538FA75329401DE5008A4F8B /* ContactDetailViewController.swift */; };
 		538FA75629401DE5008A4F8B /* ContactDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 538FA75429401DE5008A4F8B /* ContactDetailViewController.xib */; };
@@ -48,7 +48,7 @@
 		532CE521293D8FAA003E4ABC /* ContactApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		532CE524293D8FAA003E4ABC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		532CE526293D8FAA003E4ABC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		532CE528293D8FAA003E4ABC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		532CE528293D8FAA003E4ABC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		532CE52B293D8FAA003E4ABC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		532CE52E293D8FAA003E4ABC /* ContactApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ContactApp.xcdatamodel; sourceTree = "<group>"; };
 		532CE530293D8FAB003E4ABC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,7 +56,7 @@
 		532CE535293D8FAB003E4ABC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		532CE543293D9024003E4ABC /* DB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
 		532CE545293D903A003E4ABC /* ContactGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactGroup.swift; sourceTree = "<group>"; };
-		532CE547293D92C0003E4ABC /* ViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerViewModel.swift; sourceTree = "<group>"; };
+		532CE547293D92C0003E4ABC /* HomeViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerViewModel.swift; sourceTree = "<group>"; };
 		532CE54D293DA336003E4ABC /* AddViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewModel.swift; sourceTree = "<group>"; };
 		538FA75329401DE5008A4F8B /* ContactDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewController.swift; sourceTree = "<group>"; };
 		538FA75429401DE5008A4F8B /* ContactDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactDetailViewController.xib; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 				531AB18A29401FA6008C345D /* ContactTableViewCell */,
 				531AB18429401EE4008C345D /* AddViewController */,
 				538FA75A29401E6E008A4F8B /* ContactDetailViewController */,
-				538FA75929401E5F008A4F8B /* ViewController */,
+				538FA75929401E5F008A4F8B /* HomeViewController */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -212,13 +212,13 @@
 			name = Storyboards;
 			sourceTree = "<group>";
 		};
-		538FA75929401E5F008A4F8B /* ViewController */ = {
+		538FA75929401E5F008A4F8B /* HomeViewController */ = {
 			isa = PBXGroup;
 			children = (
-				532CE547293D92C0003E4ABC /* ViewControllerViewModel.swift */,
-				532CE528293D8FAA003E4ABC /* ViewController.swift */,
+				532CE547293D92C0003E4ABC /* HomeViewControllerViewModel.swift */,
+				532CE528293D8FAA003E4ABC /* HomeViewController.swift */,
 			);
-			path = ViewController;
+			path = HomeViewController;
 			sourceTree = "<group>";
 		};
 		538FA75A29401E6E008A4F8B /* ContactDetailViewController */ = {
@@ -308,7 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				532CE52F293D8FAA003E4ABC /* ContactApp.xcdatamodeld in Sources */,
-				532CE529293D8FAA003E4ABC /* ViewController.swift in Sources */,
+				532CE529293D8FAA003E4ABC /* HomeViewController.swift in Sources */,
 				531AB18E29402021008C345D /* AddViewController.swift in Sources */,
 				538FA75829401E53008A4F8B /* ContactDetailViewControllerViewModel.swift in Sources */,
 				532CE525293D8FAA003E4ABC /* AppDelegate.swift in Sources */,
@@ -321,7 +321,7 @@
 				531AB1942940244E008C345D /* HeaderView.swift in Sources */,
 				53F39B85293EFB7500221AFB /* CTextfield.swift in Sources */,
 				532880CD293FD695008EF20A /* ContactTableViewCellViewModel.swift in Sources */,
-				532CE548293D92C0003E4ABC /* ViewControllerViewModel.swift in Sources */,
+				532CE548293D92C0003E4ABC /* HomeViewControllerViewModel.swift in Sources */,
 				532CE527293D8FAA003E4ABC /* SceneDelegate.swift in Sources */,
 				539723CF29404C3B00484DC5 /* ContactDetailViewModel.swift in Sources */,
 				531AB19A29404B12008C345D /* ContactDetailTableViewCell.swift in Sources */,
