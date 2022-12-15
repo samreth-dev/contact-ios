@@ -7,14 +7,16 @@
 
 import Foundation
 import CoreData
+import Combine
 
-protocol ViewControllerViewModelProtocol {
+protocol HomeViewControllerViewModelProtocol {
     var reloadToggle: Bool { get set }
-    var publisher: Published<Bool>.Publisher { get }
+    var reloadPublisher: Published<Bool>.Publisher { get }
     var contacts: [Contact] { get set }
     var isEdit: Bool { get set }
     var clickCallBack: ((Contact) -> ())! { get set }
     var isContactsEmpty: Bool  { get }
+    var cancellable: Set<AnyCancellable> { get set }
     
     func fetch()
     func deleteAll()
@@ -24,26 +26,34 @@ protocol ViewControllerViewModelProtocol {
     func reload(contact: Contact)
 }
 
-class ViewControllerViewModel: ViewControllerViewModelProtocol {
+class HomeViewControllerViewModel {
     @Published var reloadToggle: Bool
     private var contactsForDeleting: Set<Contact>
-    var publisher: Published<Bool>.Publisher { $reloadToggle }
+    var reloadPublisher: Published<Bool>.Publisher { $reloadToggle }
     var contacts: [Contact]
     var isEdit: Bool
     var clickCallBack: ((Contact) -> ())!
+    var cancellable: Set<AnyCancellable>
     var isContactsEmpty: Bool {
         get {
             contactsForDeleting.isEmpty
         }
     }
     
-    init(reloadToggle: Bool = true, contacts: [Contact] = [], contactsForDeleting: Set<Contact> = [], isEdit: Bool = false) {
+    init(reloadToggle: Bool, contactsForDeleting: Set<Contact>, contacts: [Contact], isEdit: Bool, cancellable: Set<AnyCancellable>) {
         self.reloadToggle = reloadToggle
-        self.contacts = contacts
         self.contactsForDeleting = contactsForDeleting
+        self.contacts = contacts
         self.isEdit = isEdit
+        self.cancellable = cancellable
     }
     
+    private func sort() {
+        contacts.sort(by: { $0.fullname?.lowercased() ?? "ZZZ" < $1.fullname?.lowercased() ?? "ZZZ" })
+    }
+}
+
+extension HomeViewControllerViewModel: HomeViewControllerViewModelProtocol {
     func fetch() {
         contacts = DB.shared.fetch()
         sort()
@@ -86,9 +96,5 @@ class ViewControllerViewModel: ViewControllerViewModelProtocol {
             fetch()
         }
         reloadToggle.toggle()
-    }
-    
-    private func sort() {
-        contacts.sort(by: { $0.fullname?.lowercased() ?? "ZZZ" < $1.fullname?.lowercased() ?? "ZZZ" })
     }
 }
