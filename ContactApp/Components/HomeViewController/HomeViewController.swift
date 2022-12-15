@@ -6,16 +6,14 @@
 //
 
 import UIKit
-import Combine
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
     @IBOutlet weak var toolbar: UIToolbar!
     @IBOutlet weak var tableView: UITableView!
     private var addButton: UIButton!
     private var stackView: UIStackView!
     private var editButton: UIBarButtonItem!
-    private var viewModel: ViewControllerViewModelProtocol = ViewControllerViewModel()
-    private var cancellable: Set<AnyCancellable> = []
+    var viewModel: HomeViewControllerViewModelProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +24,8 @@ class ViewController: UIViewController {
     }
     
     private func setup() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
         editButton = editButtonItem
         editButton.tintColor = .systemBlue
         editButton.action = #selector(edit)
@@ -48,14 +48,14 @@ class ViewController: UIViewController {
     }
     
     private func binding() {
-        viewModel.publisher.sink {[weak self] _ in
+        viewModel.reloadPublisher.sink {[weak self] _ in
             self?.tableView.reloadData()
-        }.store(in: &cancellable)
+        }.store(in: &viewModel.cancellable)
     }
 }
 
 //MARK: UI change functions
-private extension ViewController {
+private extension HomeViewController {
     func showDeleteAlert(index: Int) {
         let alertController = UIAlertController(title: "Deleting a Contact", message: "Are you sure you want to delete this contact?", preferredStyle: .alert)
         let confirmAlertAction = UIAlertAction(title: "CONFIRM", style: .destructive) {[weak self] _ in
@@ -102,7 +102,7 @@ private extension ViewController {
 }
 
 //MARK: actions
-private extension ViewController {
+private extension HomeViewController {
     @objc private func addContact() {
         let addViewModel = AddViewModel(contactGroup: .defaultGroup, contact: nil, title: "ADD") {[weak self] contact in
             self?.viewModel.reload(contact: contact)
@@ -125,7 +125,7 @@ private extension ViewController {
 }
 
 //MARK: datasource
-extension ViewController: UITableViewDataSource {
+extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.contacts.count
     }
@@ -149,7 +149,7 @@ extension ViewController: UITableViewDataSource {
 }
 
 //MARK: delegate
-extension ViewController: UITableViewDelegate {
+extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             showDeleteAlert(index: indexPath.row)
