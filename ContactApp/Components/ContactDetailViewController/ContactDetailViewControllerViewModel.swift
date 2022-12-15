@@ -19,7 +19,7 @@ protocol ContactDetailViewControllerViewModelProtocol {
     func saveProfile(profile: Data?)
 }
 
-class ContactDetailViewControllerViewModel: ContactDetailViewControllerViewModelProtocol {
+class ContactDetailViewControllerViewModel {
     var contact: Contact
     var editCallBack: (Contact) -> ()
     
@@ -27,7 +27,9 @@ class ContactDetailViewControllerViewModel: ContactDetailViewControllerViewModel
         self.contact = contact
         self.editCallBack = editCallBack
     }
-    
+}
+
+extension ContactDetailViewControllerViewModel: ContactDetailViewControllerViewModelProtocol {
     func getTitle(index: Int) -> String {
         switch index {
         case 0:
@@ -76,4 +78,5 @@ class ContactDetailViewControllerViewModel: ContactDetailViewControllerViewModel
         contact.profile = profile
         DB.shared.saveContacts()
     }
+    
 }
