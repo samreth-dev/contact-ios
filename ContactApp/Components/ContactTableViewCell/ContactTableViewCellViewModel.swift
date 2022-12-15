@@ -14,7 +14,7 @@ protocol ContactTableViewCellViewModelProtocol {
     func clickDelete()
 }
 
-class ContactTableViewCellViewModel: ContactTableViewCellViewModelProtocol {
+class ContactTableViewCellViewModel {
     private var clickCallBack: (Contact) -> Void
     private var index: Int
     var contact: Contact
@@ -26,7 +26,9 @@ class ContactTableViewCellViewModel: ContactTableViewCellViewModelProtocol {
         self.contact = contact
         self.isDeleteMode = isDeleteMode
     }
-    
+}
+
+extension ContactTableViewCellViewModel: ContactTableViewCellViewModelProtocol {
     func clickDelete() {
         isDeleteMode.toggle()
         clickCallBack(contact)
