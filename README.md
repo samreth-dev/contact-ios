@@ -11,7 +11,7 @@ A contact application for creating / saving / editing / deleting contacts on loc
 
 ## Tech Stack
 
-**Language:** Swift 5.7, Objective-C (DB)
+**Language:** Swift 5.7, Objective-C 2.0 (DB)
 
 **Environment:** Xcode 14.1, macOS 13.0
 
